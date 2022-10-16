@@ -11,7 +11,7 @@ const inputs = ["Wake Up", "Do daily morning routine", "Have Tea"];
 const works = [];
 
 // route for home page
-app.get("/", function (req, res) {
+app.get("/", (req, res) => {
   res.render("list", {
     titleName: date.getDate(),
     newItems: inputs
@@ -20,7 +20,7 @@ app.get("/", function (req, res) {
 });
 
 // route for work page
-app.get("/work", function (req, res) {
+app.get("/work", (req, res) => {
   res.render("list", {
     titleName: "Work",
     newItems: works
@@ -28,14 +28,14 @@ app.get("/work", function (req, res) {
 });
 
 // route for about page
-app.get("/about", function (req, res) {
+app.get("/about", (req, res) => {
   res.render("about", {
     titleName: "About"
   });
 });
 
 // handle POST request from form
-app.post("/", function (req, res) {
+app.post("/", (req, res) =>  {
   const userInputVal = req.body.userInput;
 
   if(req.body.list === "Work") {
@@ -49,6 +49,6 @@ app.post("/", function (req, res) {
 
 
 // Listen to connections on port 8080
-app.listen(8080, function () {
+app.listen(8080, () => {
   console.log("Server is running on port 8080 ");
 });
