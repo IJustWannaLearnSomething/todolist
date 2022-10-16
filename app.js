@@ -30,6 +30,14 @@ app.get("/work", function (req, res) {
   });
 });
 
+// route for about page
+app.get("/about", function (req, res) {
+  // Render list.ejs and with the value of About
+  res.render("about", {
+    titleName: "About"
+  });
+});
+
 // handle POST request from form
 app.post("/", function (req, res) {
   const userInputVal = req.body.userInput;
