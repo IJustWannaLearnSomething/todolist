@@ -12,10 +12,8 @@ const works = [];
 
 // route for home page
 app.get("/", function (req, res) {
-  const day = date.getDate();
-  // Render list.ejs and with the value of current day
   res.render("list", {
-    titleName: day,
+    titleName: date.getDate(),
     newItems: inputs
   });
 
@@ -23,7 +21,6 @@ app.get("/", function (req, res) {
 
 // route for work page
 app.get("/work", function (req, res) {
-  // Render list.ejs and with the value of work
   res.render("list", {
     titleName: "Work",
     newItems: works
@@ -32,7 +29,6 @@ app.get("/work", function (req, res) {
 
 // route for about page
 app.get("/about", function (req, res) {
-  // Render list.ejs and with the value of About
   res.render("about", {
     titleName: "About"
   });
@@ -49,7 +45,6 @@ app.post("/", function (req, res) {
     inputs.push(userInputVal);
     res.redirect("/");
   }
-
 })
 
 
